@@ -7,6 +7,7 @@ You can follow the instruction from PureVPN website to add each .ovpn file in Ne
 ./install.sh UDP/Brazil-udp.ovpn
 ./install.sh FastUDP/Fastest-purevpn.ovpn
 ./install.sh TCP/New\ York-tcp.ovpn
+sudo systemctl restart network-manager
 
 ```
 

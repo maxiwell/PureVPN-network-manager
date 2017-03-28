@@ -34,7 +34,6 @@ sed -i "s@#PWD@$PWD@g" "$NAME"
 chmod 600 "$NAME"
 sudo chown root:root "$NAME"
 sudo mv "$NAME" /etc/NetworkManager/system-connections/
-sudo systemctl restart network-manager
-
+# sudo systemctl restart network-manager
 
 
