@@ -1,7 +1,10 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-    echo "use: $0 <ovpn file>"
+    echo -e "Use: "
+    echo -e "\t$0 <ovpn file>"
+    echo -e "\nExample:"
+    echo -e "\t$0 UDP/Brazil-udp.ovpn\n"
     exit 0
 fi
 
