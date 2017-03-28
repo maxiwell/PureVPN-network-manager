@@ -12,9 +12,9 @@ OVPNFILE=$1
 
 echo "$OVPNFILE";
 
-NAME="PureVPN `basename $OVPNFILE .ovpn`"
-SERVER=`awk '$1 ~ /^remote/' $OVPNFILE | cut -d\  -f2`
-PORT=`awk '$1 ~ /^remote/' $OVPNFILE | cut -d\  -f3`
+NAME="PureVPN `basename "$OVPNFILE" .ovpn`"
+SERVER=`awk '$1 ~ /^remote/' "$OVPNFILE" | cut -d\  -f2`
+PORT=`awk '$1 ~ /^remote/' "$OVPNFILE" | cut -d\  -f3`
 UUID=`uuidgen`
 LINUXUSER=`whoami`
 
