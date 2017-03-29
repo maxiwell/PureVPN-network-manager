@@ -1,0 +1,15 @@
+#!/bin/sh
+
+IFFILE=/var/run/vpnkillswitch.iface
+
+interface=$1 status=$2
+case $status in
+    vpn-up)
+        # Get the physical device associated with the VPN connection
+        nmcli -f type,device c | awk '$1~/^vpn$/ && $2~/[^\-][^\-]/ { print $2; }' > "${IFFILE}"
+    ;;
+    vpn-down)
+        xargs -n 1 -a "${IFFILE}" nmcli device disconnect
+    ;;
+esac
+
